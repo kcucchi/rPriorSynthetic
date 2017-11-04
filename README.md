@@ -6,7 +6,7 @@ It can be installed using the following commands within R.
 
 ```R
 library(devtools)
-install_github("kcucchi/rPrior")
+install_github("kcucchi/rPriorSynthetic")
 ```
 
 This package implements synthetic field studies using regionalized priors as developed in the package rPrior.
