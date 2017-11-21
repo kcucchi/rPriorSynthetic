@@ -34,7 +34,7 @@ generate_fields <- function(vect_param,nb_fields = 100,verbose=F){
     if(verbose){cat(paste0(i,'/',nb_fields))}
 
     g.dummy_i <-
-      gstat(formula=z~1,
+      gstat::gstat(formula=z~1,
             locations=~x+y, dummy=T,
             beta=vect_mu[i],
             model=vgm(psill = 0.5 * vect_sigma_2[i],
@@ -45,7 +45,7 @@ generate_fields <- function(vect_param,nb_fields = 100,verbose=F){
 
     # generate I fields
     # unconditional Gaussian simulations
-    yy <- predict(g.dummy_i, newdata=Y_xy, nsim=1)
+    yy <- gstat::predict(g.dummy_i, newdata=Y_xy, nsim=1)
     # str(yy)
 
     # append to main variable
